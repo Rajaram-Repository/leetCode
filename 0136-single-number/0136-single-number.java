@@ -9,14 +9,9 @@ class Solution {
             else
                 map.put(nums[i],1);        
         }
-        System.out.println(map);
-        for(Integer x : map.keySet()){
-            System.out.println(x+"~~"+map.get(x));
-            int a =map.get(x);
-            if(a==1){
+        for(Integer x : map.keySet())
+            if(map.get(x)==1)
                 return x;
-            }
-        }
         return nums[nums.length-1];
     }
 }
