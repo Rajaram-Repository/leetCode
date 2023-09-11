@@ -5,9 +5,7 @@ class Solution {
         return list;
     }
     public void search(List l,List index ,int [] nums){
-        if(l.size()==nums.length){
-            if(list.contains(l))
-                return ;
+        if(l.size()==nums.length && !list.contains(l)){
             list.add(new ArrayList<>(l));
             return;
         }
