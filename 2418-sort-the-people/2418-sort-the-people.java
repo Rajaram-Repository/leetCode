@@ -3,16 +3,14 @@ class Solution {
         int max = heights[0] ;
         int index = 0 ;
         for(int i=0;i<names.length;i++){
-            max = heights[i];
+            max = heights[i] ;
             index = i;
-            for(int j=i;j<names.length;j++){
+            for(int j=i;j<names.length;j++)
                 if(max<heights[j]){
                     max=heights[j];
                     index = j ;
                 }
-            }
-            if(index == i)
-                continue ;
+
             int temp = heights[index];
             heights[index] = heights[i];
             heights[i] = temp;
