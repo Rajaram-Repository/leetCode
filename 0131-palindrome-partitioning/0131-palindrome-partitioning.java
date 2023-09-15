@@ -19,7 +19,6 @@ class Solution {
             res(l,s.substring(i+1,s.length()));
             l.remove(l.size()-1);
         }
-        return;
     }
     public boolean pal(String s){
         int l=0 , r=s.length()-1;
