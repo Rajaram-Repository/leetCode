@@ -11,7 +11,6 @@ class Solution {
                     index = j ;
                 }
             }
-            System.out.println(index);
             if(index == i)
                 continue ;
             int temp = heights[index];
