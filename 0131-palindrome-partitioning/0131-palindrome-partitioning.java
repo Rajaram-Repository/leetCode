@@ -7,10 +7,8 @@ class Solution {
         return list;
     }
     public void res (List<String> l,String s){
-        if(s==null || s.length()==0){
-            list.add(new ArrayList<>(l));
+        if( s==null || s.length()==0 && list.add(new ArrayList<>(l)))
             return ;
-        }
         for(int i=0;i<s.length();i++){
             String a = s.substring(0,i+1);
             if(!pal(a))
