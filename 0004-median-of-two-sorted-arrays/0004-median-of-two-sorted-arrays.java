@@ -21,7 +21,7 @@ class Solution {
         return (double)arr[mid];
             
     }
-    public void mtd(int []num,int pos,int [] nums,int n){
-        for(int i=pos;i<num.length;i++) num[i]=nums[n++];
+    public void mtd(int []arr,int pos,int [] nums,int n){
+        for(int i=pos;i<arr.length;i++) arr[i]=nums[n++];
     }
 }
