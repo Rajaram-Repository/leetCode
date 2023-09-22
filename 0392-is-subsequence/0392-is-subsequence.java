@@ -10,8 +10,6 @@ class Solution {
                     break;
                 }
             }
-            if(p>=t.length())
-                return false;
         }
         if(c==s.length())
             return true;
