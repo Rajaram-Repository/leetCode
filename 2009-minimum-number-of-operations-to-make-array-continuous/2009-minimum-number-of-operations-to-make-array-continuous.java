@@ -11,8 +11,6 @@ class Solution {
             while (j < m && nums[j] - nums[i] <= n - 1) 
                 j++;
             ans = Math.min(ans, n - (j - i));
-            if(ans==0)
-                return 0;
         }
         return ans;
     }
