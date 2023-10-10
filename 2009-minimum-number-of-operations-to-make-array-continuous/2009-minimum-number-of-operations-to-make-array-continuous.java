@@ -12,7 +12,7 @@ class Solution {
                 j++;
             ans = Math.min(ans, n - (j - i));
             if(ans < i || ans==0 )
-                break;
+                return ans;
         }
         return ans;
     }
