@@ -7,7 +7,7 @@ class Solution {
             if (nums[i] != nums[i - 1]) 
                 nums[m++] = nums[i];
         int ans = n;
-        for (int i = 0, j = 0; i < m && j < m; i++) {
+        for (int i = 0, j = 0; i < m; i++) {
             while (j < m && nums[j] - nums[i] <= n - 1) j++;
             ans = Math.min(ans, n - (j - i));
             if(ans < i || ans==0 ) break;
