@@ -18,51 +18,32 @@ class Solution {
         for (int i = 0; i < people.length; i++) {
             int open =0, close=0;
             if(people[i]<s[0])
-            {
                 open =0;
-            }
             else if(people[i]>=s[m-1])
-            {
                 open = m;
-            }
-            else
-            {
+            else{
                 int l =0, r=m-1;
-                while(l<r)
-                {
+                while(l<r){
                     int mid = (l+r+1)>>1;
                     if(s[mid]<=people[i])
-                    {
                         l = mid;
-                    }
                     else
-                    {
                         r=mid-1;
-                    }
                 }
                 open = l+1;
             }
             if(people[i]<=e[0]) 
                 close =0;
             else if(people[i]>e[m-1])
-            {
                 close =m;
-            }
-            else
-            {
+            else{
                 int l=0, r=m-1;
-                while(l<r)
-                {
+                while(l<r){
                     int mid = (l+r+1)>>1;
                     if(e[mid]<people[i])
-                    {
                         l=mid;
-
-                    }
                     else
-                    {
                         r = mid-1;
-                    }
                 }
                 close = l+1;
             }
