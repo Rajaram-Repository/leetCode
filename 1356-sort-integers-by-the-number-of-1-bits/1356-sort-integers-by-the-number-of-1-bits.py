@@ -18,7 +18,7 @@ class Solution:
                 d[key] = l
         a=[]
         sorted_dict = dict(sorted(d.items()))
-        for key,val in sorted_dict.items():
+        for val in sorted_dict.values():
             val.sort()
             a.extend(val)
         return a
