@@ -3,9 +3,11 @@ class Solution:
         d ={}
         for i in arr:
             key=0
-            num = format(int(i), 'b')
-            for j in num[::-1]:
-                key += int(j)
+            num=i
+            while num>0:
+                r = num%2
+                key += r
+                num//=2
             if key in d.keys():
                 l = d[key]
                 l.append(i)
