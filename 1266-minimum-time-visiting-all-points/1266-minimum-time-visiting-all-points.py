@@ -1,7 +1,4 @@
-class Solution:
-    def get(self,from1:List[int],to:List[int]):
-        return 
-        
+class Solution:   
     def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:
         c = 0
         for i in range(1,len(points)):
