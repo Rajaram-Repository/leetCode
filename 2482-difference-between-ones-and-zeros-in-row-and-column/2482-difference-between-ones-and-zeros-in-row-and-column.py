@@ -3,16 +3,16 @@ class Solution:
         row = []
         row_l = len(grid[0])
         for i in grid:
-            c = i.count(1)
-            val = c - (row_l - c)
+            c = i.count(1) * 2
+            val = c - row_l
             row.append(val)
         col = []
         col_l = len(grid)
         for i in range(row_l):
             c=0
             for j in range(col_l):
-                c +=grid[j][i]
-            val = c - (col_l - c)
+                c +=grid[j][i] * 2
+            val = c - col_l 
             col.append(val)
             
         for i in range(col_l):
