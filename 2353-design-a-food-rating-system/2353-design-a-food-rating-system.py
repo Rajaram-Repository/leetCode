@@ -16,20 +16,12 @@ class FoodRatings:
         
 
     def changeRating(self, food, newRating):
-        """
-        :type food: str
-        :type newRating: int
-        :rtype: None
-        """
+        self.food_to_rating[food] = -newRating
         cuisine = self.food_to_cuisine[food]
         heapq.heappush(self.cuisine_to_heap[cuisine], (-newRating, food))
-        self.food_to_rating[food] = -newRating
+        
 
     def highestRated(self, cuisine):
-        """
-        :type cuisine: str
-        :rtype: str
-        """
         smallest_lexico = None
         while len(self.cuisine_to_heap[cuisine]) > 0:
             curr = self.cuisine_to_heap[cuisine][0]
@@ -37,8 +29,7 @@ class FoodRatings:
                 # delete old data
                 heapq.heappop(self.cuisine_to_heap[cuisine])
                 continue
-            smallest_lexico = curr[1]
-            break
+            return curr[1]
         return smallest_lexico
 
                 
