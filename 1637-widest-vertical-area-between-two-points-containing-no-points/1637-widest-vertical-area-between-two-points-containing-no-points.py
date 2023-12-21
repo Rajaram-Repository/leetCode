@@ -5,10 +5,7 @@ class Solution:
         for i in range(l):
             ans.append(points[i][0])
         ans.sort()
-        l = len(ans)
-        c  = -1
+        max_len  = -1
         for i in range(1,l):
-            val= ans[i]-ans[i-1]
-            if val>c:
-                c=val
-        return c
+            max_len = max(max_len,ans[i]-ans[i-1])
+        return max_len
