@@ -1,8 +1,5 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
-        my_list = ["00","30","40","50","60","70","80","90"]
-        if any(substring in s for substring in my_list):
-            return 0
         l = len(s) + 1
         dp = [0 ]*l 
 
