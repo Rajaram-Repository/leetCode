@@ -2,9 +2,7 @@ class Solution:
     def restoreIpAddresses(self, s: str) -> List[str]:
         if len(s)==4:
             l = []
-            a = ".".join(s)
-            print(a)
-            l.append(a)
+            l.append(".".join(s))
             return  l
         self.l = []
         self.dfs(s,"",0)
