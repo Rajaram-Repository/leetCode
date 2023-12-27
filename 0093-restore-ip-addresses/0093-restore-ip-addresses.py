@@ -1,12 +1,12 @@
 class Solution:
     def restoreIpAddresses(self, s: str) -> List[str]:
-        if len(s)==4:
-            l = []
-            l.append(".".join(s))
-            return  l
         self.l = []
+        if len(s)==4:
+            self.l.append(".".join(s))
+            return  self.l
         self.dfs(s,"",0)
         return self.l
+    
     def dfs(self,s,path,index):
         if index>4:
             return
