@@ -7,6 +7,5 @@ class Solution:
             if a>0:
                 l.append(int(a))
         for i in range(1,len(l)):
-            b = l[i-1] *l[i]
-            c +=b
+            c += (l[i-1] *l[i])
         return c
