@@ -7,7 +7,6 @@ class Solution:
         t //=2
         for i in range(1,l):
             if nums[i]==nums[i-1]:
-                c -= nums[i]
-                return [nums[i],t-c]
+                return [nums[i],t-(c-nums[i])]
     
         
