@@ -1,16 +1,13 @@
+from collections import Counter
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
-        i = 0
-        l = len(nums)
-        while i < l :
-            correct = nums[i] - 1
-            if nums[i] != nums[correct]:
-                nums[correct], nums[i] = nums[i], nums[correct]
-            else:
-                i += 1
+        counter = Counter(nums)
+        for key, value in counter.items():
+            if value==2:
+                f=key
+                break
 
-        for i in range(l):
-            if nums[i] != i + 1:
-                return [nums[i], i + 1]
-    
+        for i in range(1,len(nums)+1):
+            if i not in counter:
+                return [f,i]
         
