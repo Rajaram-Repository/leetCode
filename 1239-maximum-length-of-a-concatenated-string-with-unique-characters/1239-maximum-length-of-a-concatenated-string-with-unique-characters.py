@@ -1,25 +1,23 @@
 class Solution:
-    
     def maxLength(self, arr: List[str]) -> int:
-        self.c = 0
-        self.arr=arr
-        self.arr_l = len(self.arr)
-        self.res("",0)
-        return self.c
-    
-    def res(self,str_,index):
-        l = len(str_)
-        if self.c<l and self.mtd(str_):
-            self.c = l
-        elif index==self.arr_l:
+        result = [0]
+        self.dfs(arr, "", 0, result)
+        return result[0]
+
+    def dfs(self, arr, path, idx, result):
+        if self.isUniqueChars(path):
+            result[0] = max(result[0], len(path))
+
+        if idx == len(arr) or not self.isUniqueChars(path):
             return
-        for i in range(index,self.arr_l):
-            self.res(str_+self.arr[i],i+1)
-    
-    def mtd(self,word):
-        set_ = set()
-        for i in word:
-            if i in set_:
+
+        for i in range(idx, len(arr)):
+            self.dfs(arr, path + arr[i], i + 1, result)
+
+    def isUniqueChars(self, s):
+        char_set = set()
+        for c in s:
+            if c in char_set:
                 return False
-            set_.add(i)
-        return set_
+            char_set.add(c)
+        return True
