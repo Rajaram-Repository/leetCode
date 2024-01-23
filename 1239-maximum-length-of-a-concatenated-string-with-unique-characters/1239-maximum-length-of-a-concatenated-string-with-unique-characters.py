@@ -5,8 +5,8 @@ class Solution:
         return result[0]
 
     def dfs(self, arr, path, idx, result):
-        if self.isUniqueChars(path):
-            result[0] = max(result[0], len(path))
+        if result[0]<len(path) and self.isUniqueChars(path):
+            result[0] =len(path)
 
         if idx == len(arr) or not self.isUniqueChars(path):
             return
