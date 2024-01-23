@@ -7,7 +7,7 @@ class Solution:
     def dfs(self, arr, path, idx, result):
         if result[0]<len(path) and self.isUniqueChars(path):
             result[0] =len(path)
-        elif idx == len(arr) :
+        if idx == len(arr) or not self.isUniqueChars(path):
             return
 
         for i in range(idx, len(arr)):
