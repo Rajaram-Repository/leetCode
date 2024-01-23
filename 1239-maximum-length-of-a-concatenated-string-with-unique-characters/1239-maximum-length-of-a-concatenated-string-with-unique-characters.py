@@ -14,9 +14,6 @@ class Solution:
             self.dfs(arr, path + arr[i], i + 1, result)
 
     def isUniqueChars(self, s):
-        char_set = set()
-        for c in s:
-            if c in char_set:
-                return False
-            char_set.add(c)
+        if len(s) != len(set(s)):
+            return False
         return True
