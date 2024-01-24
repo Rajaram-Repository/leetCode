@@ -13,10 +13,9 @@ class Solution:
     def res(self,root,new_l):
         if not root:
             return
-        if root.val in new_l:
-            new_l.remove(root.val)
-        else:
-            new_l.add(root.val)
+        
+        new_l.remove(root.val) if root.val in new_l else new_l.add(root.val)
+            
         if not root.left and not root.right and len(new_l)<=1 :
             self.count+=1
         self.res(root.left,set(new_l))
