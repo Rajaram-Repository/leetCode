@@ -8,13 +8,11 @@ class MyQueue:
     def push(self, x: int) -> None:
         self.arr.append(x)
         self.index +=1
-        
 
     def pop(self) -> int:
-        res = self.arr[self.front]
         self.front +=1
         self.index -=1
-        return res
+        return self.arr[self.front-1]
 
     def peek(self) -> int:
         return self.arr[self.front]
