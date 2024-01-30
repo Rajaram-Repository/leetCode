@@ -1,16 +1,15 @@
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         i = 0
-        
-        while len(tokens)!=1 :
-            if tokens[i] in "+-*/":
-                tokens[i] = self.cal(tokens[i-2],tokens[i-1],tokens[i])
-                del tokens[i-1]
-                del tokens[i-2]
-                i=i-2
+        stack = []
+        for i in tokens :
+            if i in "+-*/":
+                b=stack.pop()
+                a=stack.pop()
+                stack.append(self.cal(a,b,i))
             else:
-                i+=1
-        return int(tokens[0])
+                stack.append(i)
+        return int(stack[0])
     def cal(self, a, b, c):
         a = int(a)
         b = int(b)
