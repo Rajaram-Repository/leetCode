@@ -1,9 +1,7 @@
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
-        if len(tokens)==1:
-            return int(tokens[0])
         i = 0
-        while len(tokens)>3 :
+        while len(tokens)!=1 :
             if tokens[i] in "+-*/":
                 tokens[i] = self.cal(tokens[i-2],tokens[i-1],tokens[i])
                 del tokens[i-1]
@@ -11,7 +9,7 @@ class Solution:
                 i=i-2
             else:
                 i+=1
-        return int(self.cal(tokens[0],tokens[1],tokens[2]))
+        return int(tokens[0])
     def cal(self,a,b,c):
         a = int(a)
         b = int(b)
