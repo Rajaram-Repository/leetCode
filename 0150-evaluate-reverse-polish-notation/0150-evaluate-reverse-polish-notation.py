@@ -8,9 +8,10 @@ class Solution:
             "/": lambda a, b: int(b / a),
             "*": lambda a, b: a * b
         }
-        for i in tokens :
-            if i in "+-*/":
-                stack.append(str(ops[i](int(stack.pop()),int(stack.pop()))))
+        for i in tokens:
+            if i.isnumeric() or (i[0] == '-' and i[1:].isnumeric()):
+                stack.append(int(i))
             else:
-                stack.append(i)
+                stack.append(str(ops[i](int(stack.pop()), int(stack.pop()))))
+        
         return int(stack[0])
