@@ -6,9 +6,6 @@ class Solution:
         dp[n -1] = 1
         for i in range(m - 1, -1, -1):
             for j in range(n - 1, -1, -1):
-                if arr[i][j] == 1:
-                    dp[j] = 0
-                else:
-                    dp[j] = dp[j] + dp[j + 1]
+                dp[j] = 0 if arr[i][j] == 1 else dp[j] + dp[j + 1]
         return dp[0]
         
