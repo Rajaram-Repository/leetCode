@@ -5,21 +5,14 @@ class Solution:
         j = 0
         for i in range(3,len(nums)+1,3):
             l=[]
+            if nums[i-1] - nums[j] > k :
+                return []
             while j<i:
                 l.append(nums[j])
                 j+=1
-            if l[-1] - l[0] > k :
-                return []
             ans.append(l)
             j=i
         return ans
 
-    def has_duplicates(self,lst):
-        seen = set()
-        for element in lst:
-            if element in seen:
-                return True
-            seen.add(element)
-        return False
 
 
