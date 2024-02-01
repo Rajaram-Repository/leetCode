@@ -4,9 +4,9 @@ class Solution:
         ans = []
         j = 0
         for i in range(3,len(nums)+1,3):
-            l=[]
             if nums[i-1] - nums[j] > k :
                 return []
+            l=[]
             while j<i:
                 l.append(nums[j])
                 j+=1
