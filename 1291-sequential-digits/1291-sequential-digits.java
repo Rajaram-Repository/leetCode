@@ -12,19 +12,15 @@ class Solution {
             s=0;
             e=val;
             while(e<=9){
-                String n = num.substring(s,e);
+                String n = num.substring(s++,e++);
                 int in = Integer.parseInt(n);
                 if (in<low){
-                    s++;
-                    e++;
                     continue ;
                 }
                 if (in>high) {
                     return list;
                 }
                 list.add(in);
-                s++;
-                e++;
             }
             val++;
         }
