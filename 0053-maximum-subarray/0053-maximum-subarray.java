@@ -4,8 +4,7 @@ class Solution {
         int m =0;
         for(int i=0;i<nums.length;i++){
                 m+=nums[i];
-                if(c<m)
-                    c=m;
+                c=Math.max(c,m);
                 if(m<0)
                     m=0;
         }
