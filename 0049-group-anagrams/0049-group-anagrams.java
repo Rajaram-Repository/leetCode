@@ -5,12 +5,12 @@ class Solution {
             List<String> l = new ArrayList<>();
             if(!strs[i].equals("0")){
                 l.add(strs[i]);
-            for(int j=i+1;j<strs.length;j++){
-                if( strs[i].length()==strs[j].length() && compare(strs[i],strs[j])){
-                    l.add(strs[j]);
-                    strs[j]="0";
+                for(int j=i+1;j<strs.length;j++){
+                    if( strs[i].length()==strs[j].length() && compare(strs[i],strs[j])){
+                        l.add(strs[j]);
+                        strs[j]="0";
+                    }
                 }
-            }
             }
             if(l.size()!=0)
                 list.add(l);
