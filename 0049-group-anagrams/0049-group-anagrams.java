@@ -1,29 +1,14 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> list = new ArrayList<>();
-        for(int i=0;i<strs.length;i++){
-            List<String> l = new ArrayList<>();
-            if(!strs[i].equals("0")){
-                l.add(strs[i]);
-                for(int j=i+1;j<strs.length;j++){
-                    if( strs[i].length()==strs[j].length() && compare(strs[i],strs[j])){
-                        l.add(strs[j]);
-                        strs[j]="0";
-                    }
-                }
-            }
-            if(l.size()!=0)
-                list.add(l);
+        Map <String, List<String> > map = new HashMap<>();
+        for(String x : strs){
+            char sort [] = x.toCharArray();
+            Arrays.sort(sort);
+            String s = new String(sort);
+            if(!map.containsKey(s))
+                map.put(s,new ArrayList<>());
+            map.get(s).add(x);
         }
-        return list;
-    }
-    public Boolean compare(String str ,String ans){
-        for(int i=0;i<str.length();i++){
-            int index = str.indexOf(ans.charAt(i));
-            if(index==-1)
-                return false;
-            str = str.substring(0,index)+"0"+str.substring(index+1);
-        }
-        return true;
+        return new ArrayList<>(map.values());
     }
 }
