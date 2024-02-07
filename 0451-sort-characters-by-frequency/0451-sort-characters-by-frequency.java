@@ -9,33 +9,28 @@ class Solution {
             if(arr[i]==0)
                 continue;
             if(map.containsKey(arr[i])){
-                String n ="";
-                char c =(char)(i+'0');
-                for(int x=0;x<arr[i];x++){
-                    n+=c;
-                }
-                map.put(arr[i],mtd(map.get(arr[i]),n)) ;
+                map.put(arr[i],mtd(map.get(arr[i])+con(arr[i],i))) ;
             }
             else{
-                String n ="";
-                char c =(char)(i+'0');
-                for(int x=0;x<arr[i];x++){
-                    n+=c;
-                }
-                map.put(arr[i],n);
+                map.put(arr[i],con(arr[i],i));
                 list.add(arr[i]);
             }
         }
         Collections.sort(list);
         String ans = "";
-        for(int i=list.size()-1;i>=0;i--){
+        for(int i=list.size()-1;i>=0;i--)
             ans+= map.get(list.get(i));
-        }
         return ans;
         
     }
-    public String mtd(String str,String a){
-        str +=a;
+    public String con(int n,int i){
+        String s =""; 
+        char c =(char)(i+'0');
+        for(int x=0;x<n;x++)
+            s+=c;      
+        return s;
+    }
+    public String mtd(String str){
         char x [] = str.toCharArray();
         Arrays.sort(x);
         return new String(x);
