@@ -5,7 +5,6 @@ class Solution {
         for(int i=0;i<matrix.length;i++){
             for(int j=0;j<matrix[i].length;j++){
                 if(matrix[i][j]==0){
-                     System.out.println(i+"     "+j);
                     row.add(i);
                     col.add(j);
                 }
@@ -13,12 +12,28 @@ class Solution {
         }
         int c =0;
         while(c<row.size()){
-            System.out.println(row.get(c)+"     "+col.get(c));
-            for(int i=0;i<matrix[0].length;i++){
-                matrix[row.get(c)][i]=0;
+            if(matrix[0].length<matrix.length){
+                for(int i=0;i<matrix.length;i++){
+                    matrix[i][col.get(c)]=0;                    
+                    if(i<matrix[0].length){
+
+                        matrix[row.get(c)][i]=0;
+                    }
+                }
             }
-            for(int i=0;i<matrix.length;i++){
-                matrix[i][col.get(c)]=0;
+            else if(matrix[0].length>matrix.length){
+                for(int i=0;i<matrix[0].length;i++){
+                    matrix[row.get(c)][i]=0;
+                    if(i<matrix.length){
+                        matrix[i][col.get(c)]=0;
+                    }
+                }
+            }
+            else{
+                for(int i=0;i<matrix.length;i++){
+                    matrix[row.get(c)][i]=0;
+                    matrix[i][col.get(c)]=0;
+                }
             }
             c++;
         }
