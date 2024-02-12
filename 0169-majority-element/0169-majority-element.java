@@ -5,8 +5,6 @@ class Solution {
             if(map.containsKey(x)){
                 int i = map.get(x);
                 map.put(x,map.get(x)+1);
-                if(i>=nums.length/2)
-                    return x;
             }
             else
                 map.put(x,1);
