@@ -4,10 +4,11 @@ class Solution {
             return -1;
         int j = 0;
         for(int i=1;i<=n;i++){
-            if(n%i==0)
+            if(n%i==0){
                 j++;
-            if(j==k)
-                return i;
+                if(j==k)
+                    return i;
+            }
         }
         return -1;
     }
