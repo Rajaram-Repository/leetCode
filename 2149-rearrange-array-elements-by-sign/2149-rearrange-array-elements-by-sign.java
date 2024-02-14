@@ -3,7 +3,7 @@ class Solution {
         int [] n = new int[nums.length];
         int k =0;
         int j=1;
-        for(int i=0;i<nums.length;i++){
+        for(int i=0;i<nums.length;i++)
             if(nums[i]<0){
                 n[j]=nums[i];
                 j+=2;
@@ -12,7 +12,7 @@ class Solution {
                 n[k]=nums[i];
                 k+=2;
             }
-        }
+        
         return n;
     }
 }
