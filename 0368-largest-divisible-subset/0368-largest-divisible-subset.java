@@ -15,7 +15,7 @@ class Solution {
         
         int prev =-1;
         for(int i=arr.length-2;i>=0;i--)
-            if(arr[i]==max && (prev==-1||prev%nums[i]==0)){
+            if(arr[i]==max && (prev%nums[i]==0||prev==-1)){
                 list.add(nums[i]);
                 max-=1;
                 prev = nums[i];
