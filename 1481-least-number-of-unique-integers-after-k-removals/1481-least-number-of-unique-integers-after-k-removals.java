@@ -19,18 +19,16 @@ class Solution {
         int c =0;
         int j =0;
         for(Integer i : set){
-            if(j+(m.get(i).size()*i) <= k){
-                j =j+ (m.get(i).size()*i);
-                m.remove(i);
-            }
-            else{
-                int dif =(j+(m.get(i).size()*i)) - k;
+            j =j+ (m.get(i).size()*i);
+            if(j> k){
+                int dif =j - k;
                 c= dif/i;
                 if(dif%i!=0)
                     c++;
                 m.remove(i);
                 break;
             }
+            m.remove(i);
         }
         for(List<Integer> o : m.values())
             c+=o.size();
