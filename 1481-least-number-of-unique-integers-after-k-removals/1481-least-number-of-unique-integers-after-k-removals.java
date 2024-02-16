@@ -9,16 +9,11 @@ class Solution {
         
         Map<Integer,List<Integer>> m = new HashMap<>();
         for(Map.Entry<Integer,Integer> i : map.entrySet()){
-            if(m.containsKey(i.getValue())){
-                List<Integer> l = m.get(i.getValue());
-                l.add(i.getKey());
-                m.put(i.getValue(),l);
-            }
-            else{
-                List<Integer> l = new ArrayList<>();
-                l.add(i.getKey());
-                m.put(i.getValue(),l);
-            }
+            List<Integer> l = new ArrayList<>();
+            if(m.containsKey(i.getValue()))
+                l = m.get(i.getValue());
+            l.add(i.getKey());
+            m.put(i.getValue(),l);
         }
         Set <Integer> set = new TreeSet<>(m.keySet());
         int c =0;
