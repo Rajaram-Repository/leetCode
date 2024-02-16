@@ -37,9 +37,8 @@ class Solution {
                 break;
             }
         }
-        for(Map.Entry<Integer,List<Integer>> o : m.entrySet()){
-            c+=o.getValue().size();
-        }
+        for(List<Integer> o : m.values())
+            c+=o.size();
         return c;
     }
 }
