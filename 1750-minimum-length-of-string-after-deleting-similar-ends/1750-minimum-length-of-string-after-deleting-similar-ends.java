@@ -5,11 +5,8 @@ class Solution {
         while(l<r){
             if(s.charAt(l)!=s.charAt(r)){
                 int n =r-l+1;
-                if(n<0)
-                    return 0;
-                return n;
-            }
-                
+                return n<0?0:n;
+            }  
             char val = s.charAt(l);
             while(l<=r && val==s.charAt(l))
                 l++;
@@ -17,8 +14,6 @@ class Solution {
                 r--;
         }
         int n =r-l+1;
-        if(n<0)
-            return 0;
-        return n;
+        return n<0?0:n;
     }
 }
