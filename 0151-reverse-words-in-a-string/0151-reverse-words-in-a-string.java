@@ -7,11 +7,6 @@ class Solution {
                 ans=ans+arr[i]+" ";
             }
         }
-        int i=0;
-        for(i=ans.length()-1;i>=0;i--){
-            if(ans.charAt(i)!=' ')
-                break;    
-        }
-        return ans.substring(0,i+1);
+        return ans.substring(0,ans.length()-1);
     }
 }
