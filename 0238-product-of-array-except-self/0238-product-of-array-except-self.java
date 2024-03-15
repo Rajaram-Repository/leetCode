@@ -10,13 +10,14 @@ class Solution {
                 c++;
             else
                 return num;
-        if(c>=2)
-            return num;
-        for(int i=0;i<nums.length;i++)
-            if(c==1)
+        if(c==1){
+            for(int i=0;i<nums.length;i++)
                 num[i]=nums[i]==0?mul:0;
-            else
+        }
+        else if(c==0){
+            for(int i=0;i<nums.length;i++)
                 num[i]=mul/nums[i];
+        }      
         return num;
     }
 }
