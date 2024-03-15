@@ -1,13 +1,15 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
+        int num[]= new int[nums.length];
         int mul =1;
         int c = 0; 
         for(int x : nums)
             if(x!=0)
                 mul*=x;
+            else if(c>=2)
+                return num;
             else
                 c++;
-        int num[]= new int[nums.length];
         if(c>=2)
             return num;
         for(int i=0;i<nums.length;i++)
