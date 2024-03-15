@@ -6,10 +6,10 @@ class Solution {
         for(int x : nums)
             if(x!=0)
                 mul*=x;
-            else if(c>=2)
-                return num;
-            else
+            else if(c<2)
                 c++;
+            else
+                return num;
         if(c>=2)
             return num;
         for(int i=0;i<nums.length;i++)
