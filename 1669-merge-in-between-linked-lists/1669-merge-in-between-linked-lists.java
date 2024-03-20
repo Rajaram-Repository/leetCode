@@ -13,15 +13,15 @@ class Solution {
         ListNode node = list2;
         while(node.next!=null)
              node=node.next;
-        ListNode f = new ListNode(0, list1);
+        ListNode f =new ListNode(0, list1);
         int i=0;
-        while(i!=a){
+        while(i<a){
             f=f.next;
             i++;
         }
         i=i-2;
         ListNode back =f;
-         while(i!=b){
+         while(i<b){
              back=back.next;
              i++;
          }
