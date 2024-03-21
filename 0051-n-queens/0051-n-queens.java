@@ -3,9 +3,10 @@ class Solution {
         String s = ".........".substring(0,n);
         List<List<String>> ans = new ArrayList<>();
         List<String> pos = new ArrayList<>();
-        for(int i=0;i<n;i++)
-            pos.add(s.substring(0,i)+"Q"+s.substring(i+1));
-        
+        for(int i=0;i<n;i++){
+            String str = s.substring(0,i)+"Q"+s.substring(i+1);
+            pos.add(str);
+        }
         find(pos,ans, new ArrayList<>(),0);
         return ans;
     }
