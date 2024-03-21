@@ -1,14 +1,11 @@
 class Solution {
     public List<List<String>> solveNQueens(int n) {
+        String s = ".........".substring(0,n);
         List<List<String>> ans = new ArrayList<>();
         List<String> pos = new ArrayList<>();
-        for(int i=0;i<n;i++){
-            String s = "";
-            for(int j=0;j<n;j++)
-                s+=".";
-            s = s.substring(0,i)+"Q"+s.substring(i+1);
-            pos.add(s);
-        }
+        for(int i=0;i<n;i++)
+            pos.add(s.substring(0,i)+"Q"+s.substring(i+1));
+        
         find(pos,ans, new ArrayList<>(),0);
         return ans;
     }
