@@ -1,16 +1,16 @@
 class Solution {
+    List<String> list = new ArrayList<>();
+    List<List<String>> ans = new ArrayList<>();
     public List<List<String>> solveNQueens(int n) {
         String s = ".........".substring(0,n);
-        List<List<String>> ans = new ArrayList<>();
-        List<String> pos = new ArrayList<>();
         for(int i=0;i<n;i++){
             String str = s.substring(0,i)+"Q"+s.substring(i+1);
-            pos.add(str);
+            list.add(str);
         }
-        find(pos,ans, new ArrayList<>(),0);
+        find(new ArrayList<>());
         return ans;
     }
-    public void find(List<String> list ,List<List<String>> ans,List<String> l,int s ){
+    public void find(List<String> l){
         if(l.size()==list.size() && check(l) ){
             ans.add(new ArrayList<>(l));
         }
@@ -18,7 +18,7 @@ class Solution {
             for(int i=0;i<list.size();i++){
                 if(l.contains(list.get(i))) continue;
                 l.add(list.get(i));
-                find(list,ans,l,i+1);
+                find(l);
                 l.remove(l.size()-1);
             }
         }
