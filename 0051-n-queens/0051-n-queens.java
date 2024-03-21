@@ -25,7 +25,8 @@ class Solution {
     }
     public boolean check(List<String> list ){
          for(int i=0;i<list.size();i++){
-            int j = list.get(i).indexOf("Q")-1;
+            int l = list.get(i).indexOf("Q");
+            int j = l-1;
             int k = i-1;
             while(k>=0 && j>=0 && k<list.size() && j<list.get(i).length()){
                 if(list.get(k).charAt(j)=='Q')
@@ -33,20 +34,20 @@ class Solution {
                 k--;j--;
 
             }
-            k=i-1;j = list.get(i).indexOf("Q")+1;
+            k=i-1;j = l+1;
             while(k>=0 && j>=0 && k<list.size() && j<list.get(i).length()){
                 if(list.get(k).charAt(j)=='Q')
                     return false;
                 k--;j++;
 
             }
-            k=i+1;j = list.get(i).indexOf("Q")-1;
+            k=i+1;j = l-1;
             while(k>=0 && j>=0 && k<list.size() && j<list.get(i).length()){
                 if(list.get(k).charAt(j)=='Q')
                     return false;
                 k++;j--;
             }
-            k=i+1;j = list.get(i).indexOf("Q")+1;
+            k=i+1;j = l+1;
             while(k>=0 && j>=0 && k<list.size() && j<list.get(i).length()){
                 if(list.get(k).charAt(j)=='Q')
                     return false;
