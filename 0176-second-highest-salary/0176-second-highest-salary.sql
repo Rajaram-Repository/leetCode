@@ -1,10 +1,8 @@
 # Write your MySQL query statement below
+SELECT 
+IFNULL(
+    (select DISTINCT Salary from Employee
+order by salary desc
+limit 1 offset 1),NULL)
+as SecondHighestSalary
 
-
-SELECT
-    IFNULL(
-      (SELECT DISTINCT Salary
-       FROM Employee
-       ORDER BY Salary DESC
-        LIMIT 1 OFFSET 1),
-    NULL) AS SecondHighestSalary
