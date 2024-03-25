@@ -1,12 +1,12 @@
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
-        Set <Integer> set = new TreeSet<>();
+        Map<Integer,Integer> map = new HashMap<>();
         List<Integer> list = new ArrayList<>();
         for(int x : nums)
-            if(set.contains(x))
+            if(map.containsKey(x))
                 list.add(x);
             else
-                set.add(x);
+                map.put(x,1);
         return list;
     }
 }
