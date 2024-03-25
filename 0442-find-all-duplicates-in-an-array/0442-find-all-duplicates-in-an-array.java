@@ -1,10 +1,12 @@
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
-        Arrays.sort(nums);
+        Set <Integer> set = new TreeSet<>();
         List<Integer> list = new ArrayList<>();
-        for(int i=1;i<nums.length;i++)
-            if(nums[i-1]==nums[i])
-                list.add(nums[i]);
+        for(int x : nums)
+            if(set.contains(x))
+                list.add(x);
+            else
+                set.add(x);
         return list;
     }
 }
